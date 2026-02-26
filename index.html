@@ -281,12 +281,18 @@
     
     footer a { color: var(--secondary); text-decoration: none; }
 
-    /* Product Size */
+    /* Product Image - Centrado y sin sobreposición */
     .product-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background: #e0e0e0;
+        width: 100%;
+        max-width: 500px;           /* Evita que se vea gigante en desktop */
+        height: 250px;
+        object-fit: contain;        /* Muestra la imagen completa sin recortar */
+        object-position: center;    /* Centra el contenido dentro del frame */
+        display: block;             /* Necesario para que margin: auto funcione */
+        margin: 0 auto 25px auto;   /* Centra horizontalmente + espacio abajo */
+        background: #e0e0e0;
+        border-radius: 12px;        /* Opcional: coincide con el diseño */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Opcional: profundidad */
     }
       
     /* Mobile optimizations */
@@ -313,17 +319,21 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <img src="img/producto01.png" alt="Fregadero De Cocina Inteligente Con Pantalla Digital 80*45" class="product-image">
-      <span class="badge">⭐ Más de 2,500 clientes satisfechos</span>
-      <h1>¿Cansado de fregaderos que se rayan, manchan y oxidan en meses?</h1>
-      <p>Descubre el fregadero inteligente de acero 304 con recubrimiento nano-PTFE: anti-rayones, anti-manchas y fácil de limpiar. ¡Transforma tu cocina hoy!</p>
-      <a href="https://meli.la/2qyQzLb" class="cta" target="_blank">👉 Ver Oferta en Mercado Libre</a>
-      <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.9;">🔒 Compra segura • Garantía oficial • Envío rápido</p>
-    </div>
-  </section>
+ <!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    
+    <!-- Badge primero para mejor jerarquía visual -->
+    <span class="badge">⭐ Más de 2,500 clientes satisfechos</span>
+    
+    <!-- Imagen del producto -->
+    <img src="img/producto01.png" 
+         alt="Fregadero De Cocina Inteligente Con Pantalla Digital 80*45" 
+…      🔒 Compra segura • Garantía oficial • Envío rápido
+    </p>
+    
+  </div>
+</section>
 
   <!-- Problem / Solution -->
   <section>
